@@ -7,10 +7,43 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
+// user1 makes move
+// user2 makes move
+// user1 chooses rock, user2 chooses paper - user2 wins
+// user1 chooses rock, user2 chooses scissors - user1 wins
+// user1 chooses rock, user2 chooses rock - it's a tie
+// user1 chooses paper, user2 chooses rock - user1 wins
+// user1 chooses paper, user2 chooses scissors - user2 wins
+// user1 chooses paper, user2 chooses paper - it's a tie
+// user1 chooses scissors, user2 chooses rock - user2 wins
+// user1 chooses scissors, user2 chooses paper - user1 wins
+// user1 chooses scissors, user2 chooses scissors - it's a tie
 
 function rockPaperScissors(hand1, hand2) {
 
   // Write code here
+
+if(hand1=='rock' && hand2 =='paper'){
+  return 'Player 2 Wins!'
+}else if(hand1=='rock' && hand2 =='scissors'){
+  return 'Player 1 Wins!'
+}else if(hand1=='paper' && hand2 =='rock'){
+  return 'Player 1 Wins!'
+}else if(hand1=='paper' && hand2 =='scissors'){
+  return 'Player 2 Wins!'
+}else if(hand1=='scissors' && hand2 =='rock'){
+  return 'Player 2 Wins!'
+}else if(hand1=='scissors' && hand2 =='paper'){
+  return 'Player 1 Wins!'
+}else if(hand1=='rock' && hand2=='rock'){
+  return 'It is a tie!'
+}else if(hand1=='paper' && hand2=='paper'){
+  return 'It is a tie!'
+}else if(hand1=='scissors' && hand2=='scissors'){
+  return 'It is a tie!'
+}else {
+  return 'Please enter "rock", "paper", or "scissors"'
+}
 
 }
 
