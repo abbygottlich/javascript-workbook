@@ -7,10 +7,8 @@ const currentDate = () =>{
   
   // Write a JavaScript program to convert a number to a string. - use .toString method
   const numString = (num1) =>{
-    const numString = num1.toString();
-    return numString;
+    return num1.toString();
   }
-  console.log(numString(7));
   
   // Write a JavaScript program to convert a string to the number. - use Number() method
   const word = (str1) =>{
