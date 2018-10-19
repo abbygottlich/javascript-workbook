@@ -7,10 +7,39 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
+// my code starts here
+
+// find first vowel of word: 'findFirstVowel' (for loop)
+    // if first vowel is first letter of word, add "yay" to end of word
+    // if first vowel is in another position: 'translateWord', 
+      // remove all consinents before it (.split and .splice)
+      // add those consinents to the end of the word (.join)
+      // add "ay" to the end of all of that
+
+const findFirstVowel = (word) => {
+  for (let i = 0; i < word.length; i++) {
+    const charPosition = word[i];
+    if(charPosition == 'a' || charPosition == 'e' || charPosition == 'i' || charPosition == 'o' || charPosition == 'u'){
+    return i;}
+  }
+}
+
+const translateWord = (word, vowelPosition) => {
+  if(vowelPosition == 0){
+    return word + 'yay'
+  }else{
+    const separateLetters = word.split('');
+    const removeConsonants = separateLetters.splice(0, vowelPosition);
+    return separateLetters.join('') + removeConsonants.join('') + 'ay';
+  }
+}
+
 
 function pigLatin(word) {
 
   // Your code here
+  const vowelPosition = findFirstVowel(word)
+  return translateWord(word, vowelPosition)
 
 }
 
