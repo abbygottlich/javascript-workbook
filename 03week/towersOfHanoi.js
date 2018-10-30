@@ -36,43 +36,6 @@ function movePiece(startStack, endStack) {
   const inHand = startingStack.pop();
   // place the popped off value on the end of the ending stack
   const endingStack = getStackValue(endStack).push(inHand);
-  // grab the last item that was placed on the ending stack
-  const lastItem = endstack.pop()
-  // if it's smaller than the inHand value, it's an invalid move
-  if(lastItem < inHand) {
-    console.log('Invalid move. Try again')
-  // if the peg is empty, or the block on the peg is larger than the block in hand, place it on the peg
-  } else {
-    endingStack
-  }
-
-
-//   switch (endStack) {
-//     case "b":
-//       if (startingStack === "a") {
-//         return (stacks = {
-//           a: startingStack,
-//           b: endingStack,
-//           c: stacks.c
-//         });
-//       } else if (startingStack === "c") {
-//         return (stacks = {
-//           a: stacks.a,
-//           b: endingStack,
-//           c: startingStack
-//         });
-//       }
-//       break;
-//     case "a":
-//       return stacks.b;
-//       break;
-//     case "c":
-//       return stacks.c;
-//       break;
-//     default:
-//       return "Invalid Move";
-//   }
-// }
 
 function getStackValue(stack) {
   switch (stack) {
@@ -91,34 +54,22 @@ function getStackValue(stack) {
 }
 
 function isLegal(startStack, endStack) {
-  // Your code here
   // if peg is empty, block will be placed
-  let startArray = getStackValue(startStack);
-  let endArray = getStackValue(endStack);
-
-  if (endArray.length === 0) {
-    return true;
+  // start by grabbing the last item that was placed on the ending stack
+  const lastItem = endstack.pop()
+  // if it's smaller than the inHand value, it's an invalid move
+  if(lastItem < inHand) {
+    console.log('Invalid move. Try again')
+  // if the peg is empty, or the block on the peg is larger than the block in hand, place it on the peg
+  } else {
+    endingStack
   }
-  // switch (endStack) {
-  //   case 'a':
-  //   end = stacks.a;
-  //   break;
-  //   case 'b':
-  //   end = stacks.b;
-  //   break;
-  //   case 'c':
-  //   end = stacks.c;
-  //   break;
-  //   default:
-  //   return 'Invalid Move'
-  // }
-  // if block on peg is smaller than block in hand, return 'invalid move'
-  // if block on peg is larger than block in hand, block will be placed
-}
 
 function checkForWin() {
-  // Your code here
   // once all blocks are moved to last peg, return 'winner'
+  if(stacks.c === [4, 3, 2, 1]){
+    console.log('Winner!')
+  }
 }
 
 function towersOfHanoi(startStack, endStack) {
