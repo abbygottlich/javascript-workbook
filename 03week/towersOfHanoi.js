@@ -36,6 +36,9 @@ function movePiece(startStack, endStack) {
   const inHand = startingStack.pop();
   // place the popped off value on the end of the ending stack
   const endingStack = getStackValue(endStack).push(inHand);
+  if(inHand) {
+    endingstack
+  };
 
 function getStackValue(stack) {
   switch (stack) {
@@ -73,15 +76,13 @@ function checkForWin() {
 }
 
 function towersOfHanoi(startStack, endStack) {
-  // Your code here
-
-  // player clicks block to place on peg
-  // call isLegal function
+// check to see if move is legal
   if (isLegal(startStack, endStack)) {
+    // if move is legal, place piece on peg
     movePiece(startStack, endStack);
+    // once the piece has been moved, check for a win
+    checkForWin();
   }
-  // call function move piece here
-  // call checkForWin function
 }
 
 function getPrompt() {
