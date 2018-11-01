@@ -1,6 +1,6 @@
 // player clicks block to place on peg
 // if peg is empty, block will be placed
-// if peg already has block(s)
+// if peg already has block(s):
 // if block on peg is smaller than block in hand, return 'invalid move'
 // if block on peg is larger than block in hand, block will be placed
 // once all blocks are moved to last peg, return 'winner'
@@ -58,32 +58,46 @@ function getStackValue(stack) {
 }
 
 function isLegal(startStack, endStack) {
-  // start by targeting the last item that was placed on the ending stack
-  const lastItem = endstack.pop();
+  // if peg is not empty, target the last item that was placed on the ending stack
+  const lastItem = endStack.pop;
+  const startingStack = getStackValue(startStack);
+  const inHand = startingStack.pop();
   // if it's smaller than the inHand value, it's an invalid move
   if (lastItem < inHand) {
     console.log("Invalid move. Try again");
     // if the peg is empty, or the block on the peg is larger than the block in hand, place it on the peg
-  } else {
-    endingStack.push(inHand);
   }
 }
 
-// function checkForWin() {
-//   // once all blocks are moved to last peg, return 'winner'
-//   if (stacks.c === [4, 3, 2, 1]) {
-//     console.log("Winner!");
-//   }
-// }
+function checkForWin() {
+  // once all blocks are moved to last peg, return 'winner'
+  if (stacks.c == [4, 3, 2, 1]) {
+    return true;
+  }
+}
+
+function reset() {
+  if (checkForWin) {
+    let stacks = {
+      a: [4, 3, 2, 1],
+      b: [],
+      c: []
+    };
+  }
+}
 
 function towersOfHanoi(startStack, endStack) {
   // check to see if move is legal
-  // if (isLegal(startStack, endStack)) {
-  // if move is legal, place piece on peg
-  movePiece(startStack, endStack);
-  // once the piece has been moved, check for a win
-  //   checkForWin();
-  // }
+  if (isLegal(startStack, endStack)) {
+    // if move is legal, place piece on peg
+    movePiece(startStack, endStack);
+    // once the piece has been moved, check for a win
+    if (checkForWin()) {
+      console.log("Winner!");
+    }
+  } else {
+    console.log("Not a legal move. Try again.");
+  }
 }
 
 function getPrompt() {
