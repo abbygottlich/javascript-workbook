@@ -30,14 +30,45 @@ function getRandomInt(min, max) {
 
 function generateHint() {
   // your code here
+  const showHints = (guess) =>{
+    const guessArr = guess.split(‘’)
+    const solutionArr = solution.split(‘’)
+    let rightLetterRightPlace = 0;
+    let rightLetterWrongPlace = 0;
+    guessArr.forEach((letter,index)=>{
+      console.log(letter, ‘current’, solutionArr[index])
+    const correspondingLetter = solutionArr[index]
+      if(letter == correspondingLetter) {
+        //add to “right place, right letter” count
+        rightLetterRightPlace ++
+      } else if(solutionArr.includes(letter)){
+        //add to “right letter, wrong place” count
+        rightLetterWrongPlace ++
+      }
+      });
+      return ‘$(rightLetterRightPlace)-$(rightLetterWrongPlace)’;
+        console.log(guessArr, solutionArr)
+    };
+    
 }
 
 function mastermind(guess) {
   solution = 'abcd'; // Comment this out to generate a random solution
   // your code here
+  if(isValid(guess)){
+    board.push(guess);
+    if(checkForWin(guess)}}{
+    // tell user that they won
+    resetBoard();
+    } else if (hasGuessesRemaining()) {
+      //tell user that they lost and show solution
+      resetBoard();
+    } else {
+    showHints()
+      }
 }
-
-
+  
+  
 function getPrompt() {
   rl.question('guess: ', (guess) => {
     mastermind(guess);
