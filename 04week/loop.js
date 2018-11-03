@@ -33,3 +33,12 @@ for (let item in personsKeys) {
 }
 
 console.log(infoStr);
+
+// Then use a for...in loop and if state to console.log the value associated with the key birthDate.
+
+// For every item in the persons object, check to see if it's titled "birthDate". If the object does include an item titled birthDate, print out the value of that key.
+for (let item in persons) {
+  if (item == "birthDate") {
+    console.log(persons.birthDate);
+  }
+}
