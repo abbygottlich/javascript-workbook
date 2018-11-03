@@ -17,6 +17,23 @@ function printBoard() {
   }
 }
 
+// Guess has to be valid, format guess(.lowerCase and .trim) → isValidInput() returns T/F
+// must be letters from letters array
+// must have 4
+// can’t be null
+
+const formattedGuess = guess.toLowerCase().trim();
+// const isValidInput(formattedGuess) => {
+//   for( let x = 0; x <= 4; x++){
+//     if(guess.includes('i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'){
+//       console.log("Invalid guess. Please try again.");
+//     });
+//   } else {
+//     printBoard();
+//   }
+// }
+
+
 function generateSolution() {
   for (let i = 0; i < 4; i++) {
     const randomIndex = getRandomInt(0, letters.length);
