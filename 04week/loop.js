@@ -42,3 +42,13 @@ for (let item in persons) {
     console.log(persons.birthDate);
   }
 }
+
+// Use a for loop to console.log the numbers 1 to 1000.
+
+// Create a variable equal to an empty string. This will be used to pass info into.
+const num = [""];
+
+// Start at 0 and loop through the array 1000 times, adding 1 to the value each time.
+for (let x = 0; x < 1001; x++) {
+  console.log(x);
+}
