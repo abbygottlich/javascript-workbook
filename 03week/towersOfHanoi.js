@@ -42,31 +42,34 @@ function movePiece(startStack, endStack) {
 }
 
 function isLegal(startStack, endStack) {
-  // if peg is not empty, target the last item that was placed on the ending stack
+  // targeting the array that represents endingStack
   const endingStack = stacks[endStack];
+  // targeting the last item that was placed on the ending stack
   const lastItem = endingStack[endingStack.length - 1];
+  // targeting the array that represents startingStack
   const startingStack = stacks[startStack];
+  // targeting the last item of startingStack
   const inHand = startingStack[startingStack.length - 1];
+  // if the peg is empty or the value of inHand is less than the value of lastItem, return true
   if (endingStack.length === 0 || inHand < lastItem) {
     return true;
   } else {
-    // if it's smaller than the inHand value, it's an invalid move
+    // if the lastItem value is smaller than the inHand value, it's an invalid move
     console.log("Invalid move. Try again");
     return false;
-    // if the peg is empty, or the block on the peg is larger than the block in hand, place it on the peg
   }
 }
 
 function checkForWin() {
   // once all blocks are moved to last peg, return 'winner'
-  if (stacks.c == [4, 3, 2, 1]) {
+  if (stacks.c.length === 4) {
     return true;
   }
 }
 
 function reset() {
   if (checkForWin) {
-    let stacks = {
+    stacks = {
       a: [4, 3, 2, 1],
       b: [],
       c: []
@@ -82,6 +85,7 @@ function towersOfHanoi(startStack, endStack) {
     // once the piece has been moved, check for a win
     if (checkForWin()) {
       console.log("Winner!");
+      reset();
     }
   } else {
     console.log("Not a legal move. Try again.");
