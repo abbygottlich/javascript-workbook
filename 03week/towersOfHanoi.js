@@ -31,40 +31,28 @@ function printStacks() {
 function movePiece(startStack, endStack) {
   // if peg already has block(s)
   // get the array of the starting stack
-  const startingStack = getStackValue(startStack);
+  const startingStack = stacks[startStack];
   // pop off the end value
   const inHand = startingStack.pop();
   // place the popped off value on the end of the ending stack
-  const endingStack = getStackValue(endStack);
+  const endingStack = stacks[endStack];
   if (inHand) {
     endingStack.push(inHand);
   }
 }
 
-function getStackValue(stack) {
-  switch (stack) {
-    case "a":
-      return stacks.a;
-      break;
-    case "b":
-      return stacks.b;
-      break;
-    case "c":
-      return stacks.c;
-      break;
-    default:
-      return "Invalid Move";
-  }
-}
-
 function isLegal(startStack, endStack) {
   // if peg is not empty, target the last item that was placed on the ending stack
-  const lastItem = endStack.pop;
-  const startingStack = getStackValue(startStack);
-  const inHand = startingStack.pop();
-  // if it's smaller than the inHand value, it's an invalid move
-  if (lastItem < inHand) {
+  const endingStack = stacks[endStack];
+  const lastItem = endingStack[endingStack.length - 1];
+  const startingStack = stacks[startStack];
+  const inHand = startingStack[startingStack.length - 1];
+  if (endingStack.length === 0 || inHand < lastItem) {
+    return true;
+  } else {
+    // if it's smaller than the inHand value, it's an invalid move
     console.log("Invalid move. Try again");
+    return false;
     // if the peg is empty, or the block on the peg is larger than the block in hand, place it on the peg
   }
 }
