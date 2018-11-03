@@ -52,3 +52,19 @@ const num = [""];
 for (let x = 0; x < 1001; x++) {
   console.log(x);
 }
+
+// Use a do...while loop to console.log the numbers from 1 to 1000.
+
+// Set a variable equal to an empty string to pass info to later.
+let nums = "";
+
+// Set another variable equal to 0 as your starting point.
+let i = 0;
+
+// As long as your starting variable is less than 1000, add 1 and an empty space to the value.
+do {
+  i = i + 1;
+  nums = nums + i + " ";
+} while (i < 1000);
+
+console.log(nums);
