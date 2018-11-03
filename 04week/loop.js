@@ -68,3 +68,23 @@ do {
 } while (i < 1000);
 
 console.log(nums);
+
+// When is a for loop better than a while loop?
+console.log(
+  "A for loop is better than a while loop when you know you want your code to run a certain number of times."
+);
+
+// How is the readability of the code affected?
+console.log(
+  "For loops are less readable because they are not similar to the way you would read it in English. While loops have better readability because it's closer to how we would read it in English."
+);
+
+// What is the difference between a for loop and a for...in loop?
+console.log(
+  "A for loop runs through the entire array or object each time it iterates, and has a specified starting and ending point. A for...in loop runs code on each individual item within the array or object each time it iterates and ends once it has run the specific code on each of those items."
+);
+
+// What is the difference between a while loop and a do...while loop?
+console.log(
+  "A do...while loop runs through the code at least once before checking whether or not the condition is true or false. The while loop always checks the condition first and will not run the code unless it is true."
+);
