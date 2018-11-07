@@ -38,7 +38,7 @@ if (typeof describe === "function") {
     // I created a new instance of a CrewMember and passed in the same values listed in the CrewMember class
     // I did not include 'ship' because that is the value we will be assigning later
 
-    const rickMartinez = new CrewMember("Rick Martinez", "pilot", "chemistry");
+    const crewMember1 = new CrewMember("Rick Martinez", "pilot", "chemistry");
 
     it("can enter a ship", function() {
       let mav = new Ship("Mars Ascent Vehicle", "MAV", "Ascend into low orbit");
@@ -50,7 +50,7 @@ if (typeof describe === "function") {
     });
   });
 
-  // EnterAShip=(crew)=>{
+  // enterShip=(crew)=>{
   //   this.crew = crew
   //   crew.ship.push(this.name);
   // }
@@ -106,3 +106,7 @@ if (typeof describe === "function") {
     });
   });
 }
+
+// I think this last one will be some sort of conditional
+// If a ship doesn't have any crew members in the crew array, return 'Can't perform a mission yet.'
+// If they have at least 1 (2?) crew members, return its corresponding mission statement.
