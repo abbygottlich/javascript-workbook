@@ -50,6 +50,11 @@ if (typeof describe === "function") {
     });
   });
 
+  // EnterAShip=(crew)=>{
+  //   this.crew = crew
+  //   crew.ship.push(this.name);
+  // }
+
   describe("Ship", function() {
     it("should have a name, a type, an ability and an empty crew upon instantiation", function() {
       let mav = new Ship("Mars Ascent Vehicle", "MAV", "Ascend into low orbit");
@@ -61,14 +66,14 @@ if (typeof describe === "function") {
 
     // class #2
     // I created a new class called 'Ship' and gave it the attributes, 'name', 'type', and 'ability'
-    // I also gave it the 'crew' attribute and set it to null, so we can push whichever CrewMember we want into the class
+    // I also gave it the 'crew' attribute and set it to an empty array, so we can push whichever CrewMember we want into the array
 
     class Ship {
       constructor(name, type, ability, crew) {
         this.name = name;
         this.type = type;
         this.ability = ability;
-        this.crew = null;
+        this.crew = [];
       }
     }
 
