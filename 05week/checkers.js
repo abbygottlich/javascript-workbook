@@ -1,17 +1,3 @@
-// write a for loop for each array to set up the board (for each even space, place a piece)
-// each color can only move in one direction (use greater than or less than)
-// you can't jump your own player
-// put checkers on board
-// 12 white checkers, 12 red checkers
-// switch between two players
-// change space to null after piece has been jumped
-// check for win (all of one type of checker is gone/has been jumped/null)
-// valid move function (can't move to a full spot or white spot)
-// reset board function
-
-// take in a input
-// split the input
-
 //Write a setGame function to place the pieces on the board (for loop)
 //Write a validMoveX function that only allows X pieces to move down, and into null spots (split the string/use greater than or less than)
 //Write a validMoveO function that only allows O pieces to move up, and into null spots (split the string/use greater than or less than)
@@ -76,6 +62,33 @@ class Board {
   }
 
   // Your code here
+
+  //Write a setGame function to place the pieces on the board (for loop)
+  const setBoard = () =>{
+  console.log(board[0][1].push('X'));
+  }
+
+  //Write a validMoveX function that only allows X pieces to move down, and into null spots (split the string/use greater than or less than)
+  const validMoveX = () =>{
+    input1.split
+  }
+
+  //Write a validMoveO function that only allows O pieces to move up, and into null spots (split the string/use greater than or less than)
+
+  const validMoveO = () =>{
+    input1.split
+  }
+
+  //Write a movePiece function that allows pieces to move from one spot to another
+  const movePiece = (input1, input2) =>{
+    if(input2===null){
+      input2.push()
+    }
+  }
+
+  //Write a jumpOpponent function that allows one piece to jump over another, ommitting the piece that was jumped over
+  
+
 }
 
 class Game {
