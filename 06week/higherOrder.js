@@ -4,39 +4,32 @@ const assert = require("assert");
 
 function forEach(arr, callback) {
   // Your code here
+  for (let count = 0; count >= arr.length; count++) {
+    return callback();
+  }
 }
 
 function map(arr, callback) {
   // Your code here
-  const myMap = (arr, callback) => {
-    const newArr = [];
-    for (let i = 0; i < arr.length; i++) {
-      console.log(arr[i]);
-      const reformattedItem = callback(arr[i]);
-      newArr.push(reformattedItem);
-    }
-    return newArr;
-  };
-
-  const nameArr = ["hanna", "daniel", "abby", "lauren", "bob", "susan"];
-
-  const nameArrUpperCase = () =>
-    myMap(nameArr, str => {
-      return str.toUpperCase();
-    });
-
-  nameArrUpperCase();
+  arr.forEach(){
+    return arr[i]*i;
+  }
 }
 
 function filter(arr, callback) {
   // Your code here
+  if(filtered[i] % 2 === 0){
+    return i;
+  }
 }
 
 function some(arr, callback) {
+  //can use forEach
   // Your code here
 }
 
 function every(arr, callback) {
+  //can use forEach
   // Your code here
 }
 
