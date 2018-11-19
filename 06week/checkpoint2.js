@@ -8,7 +8,13 @@ const nums = strNums.map((num) => {
 console.log(nums);
 
 // Find the sum of the even values
-const sumEvens;
+const newArr = [];
+const sumEvens = nums.forEach(function(item) {
+  if(item % 2 === 0){
+    newArr.push(item)
+  }
+});
+console.log(newArr);
 
 
 // Find the index of the first "Austin" value (the value plus its index equals 512)
