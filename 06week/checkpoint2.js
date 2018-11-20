@@ -107,7 +107,15 @@ const weatherStates = () => {
 }
 console.log(weatherStates())
 
-//find the id of the object in weather that has a min_temp of 15.915
+//find the id of the object in weather that has a min_temp of 15.915 
 
-const idealTemp = 
-console.log(idealTemp)
+const idealTemp = () => {
+  //loop through the weather array 
+  const weatherObj = weather.find(item => {
+    //return the first instance of an item that has a min temp of 15.915
+    return item['min_temp'] === 15.915
+  })
+  //access the id of that item
+  return weatherObj.id
+}
+console.log(idealTemp())
