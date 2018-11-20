@@ -7,21 +7,16 @@ const nums = strNums.map((num) => {
 console.log(nums);
 
 // Find the sum of the even values
-// Finding the even values
-const newArr = [];
-const sumEvens = nums.forEach(function(item) {
-  if(item % 2 === 0){
-    newArr.push(item)
-  }
-});
-console.log(newArr);
-
-//Adding the even values together --- needs to be refactored to ES6 syntax ---
-const sum = newArr.reduce(add, 0);
-function add(a, b) {
-    return a + b;
+const sumEvens = () => {
+  let totalSum = 0
+  nums.forEach(item => {
+    if(item % 2 === 0){
+      totalSum = totalSum + item
+    }
+  })
+  return totalSum
 }
-console.log(sum);
+console.log(sumEvens());
 
 // Find the index of the first "Austin" value (the value plus its index equals 512)
 const atxIdx;
