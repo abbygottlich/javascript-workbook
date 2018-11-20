@@ -4,33 +4,49 @@ const assert = require("assert");
 
 function forEach(arr, callback) {
   // Your code here
-  for (let count = 0; count >= arr.length; count++) {
-    return callback();
+  for (let count = 0; count < arr.length; count++) {
+    callback(arr[count]);
   }
 }
 
 function map(arr, callback) {
   // Your code here
-  arr.forEach(){
-    return arr[i]*i;
-  }
+  const newArr = [];
+  arr.forEach(item => {
+    newArr.push(callback(item));
+  });
+  return newArr;
 }
 
 function filter(arr, callback) {
   // Your code here
-  if(filtered[i] % 2 === 0){
-    return i;
-  }
+  const filteredArr = [];
+  arr.forEach(item => {
+    if (callback(item)) {
+      filteredArr.push(item);
+    }
+  });
+  return filteredArr;
 }
 
 function some(arr, callback) {
-  //can use forEach
   // Your code here
+  for (let i = 0; i < arr.length; i++) {
+    if (callback(arr[i])) {
+      return true;
+    }
+  }
+  return false;
 }
 
 function every(arr, callback) {
-  //can use forEach
   // Your code here
+  for (let i = 0; i < arr.length; i++) {
+    if (!callback(arr[i])) {
+      return false;
+    }
+  }
+  return true;
 }
 
 if (typeof describe === "function") {
