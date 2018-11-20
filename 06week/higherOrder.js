@@ -12,7 +12,9 @@ function forEach(arr, callback) {
 function map(arr, callback) {
   // Your code here
   const newArr = [];
+  // for each item in the array, call the callback function on it
   arr.forEach(item => {
+    //then mutate the item and push it to new array
     newArr.push(callback(item));
   });
   return newArr;
@@ -21,6 +23,7 @@ function map(arr, callback) {
 function filter(arr, callback) {
   // Your code here
   const filteredArr = [];
+  //for each item in the array, run the callback function and if it passes the test push original item to the filteredArr
   arr.forEach(item => {
     if (callback(item)) {
       filteredArr.push(item);
@@ -31,6 +34,7 @@ function filter(arr, callback) {
 
 function some(arr, callback) {
   // Your code here
+  // Go through each item in the array until you find an item that passes the callback function
   for (let i = 0; i < arr.length; i++) {
     if (callback(arr[i])) {
       return true;
@@ -41,6 +45,7 @@ function some(arr, callback) {
 
 function every(arr, callback) {
   // Your code here
+  // Go through each item in the array until you find an item that does not pass the callback function
   for (let i = 0; i < arr.length; i++) {
     if (!callback(arr[i])) {
       return false;
