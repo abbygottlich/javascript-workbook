@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import ElementCreator from "./ElementCreator";
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
 
 class App extends Component {
   state = {
@@ -25,6 +27,8 @@ class App extends Component {
     });
   };
 
+  deleteItem = 
+
   render() {
     console.log("this is state " + this.state.input);
     return (
@@ -33,9 +37,13 @@ class App extends Component {
           <h1>My To-Do List</h1>
           <ElementCreator starTrek={this.state.list} />
           <form onSubmit={this.onSubmit}>
-            <input value={this.state.input} onChange={this.onChange} />
+            <TextField
+              value={this.state.input}
+              onChange={this.onChange}
+              placeholder="I need to..."
+            />
             <br />
-            <button>Submit</button>
+            <Button>Add</Button>
           </form>
         </header>
       </div>
