@@ -12,11 +12,12 @@ function forEach(arr, callback) {
 function map(arr, callback) {
   // Your code here
   const newArr = [];
-  // for each item in the array, call the callback function on it
-  arr.forEach(item => {
-    //then mutate the item and push it to new array
-    newArr.push(callback(item));
-  });
+  for (let item = 0; item < arr.length; item++) {
+    // for each item in the array, call the callback function on it
+    const mutatedItem = callback(arr[item]);
+    // push the mutated items into the new array
+    newArr.push(mutatedItem);
+  }
   return newArr;
 }
 
@@ -24,11 +25,12 @@ function filter(arr, callback) {
   // Your code here
   const filteredArr = [];
   //for each item in the array, run the callback function and if it passes the test push original item to the filteredArr
-  arr.forEach(item => {
+  for (let index = 0; index < arr.length; index++) {
+    const item = arr[index];
     if (callback(item)) {
       filteredArr.push(item);
     }
-  });
+  }
   return filteredArr;
 }
 
