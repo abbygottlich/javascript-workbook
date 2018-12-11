@@ -8,12 +8,11 @@ import Button from "@material-ui/core/Button";
 class App extends Component {
   state = {
     input: "",
-    list: [],
+    chips: [],
     test: "hello"
   };
 
   onChange = e => {
-    console.log("*** things changed ***", this.state.input);
     this.setState({
       input: e.target.value
     });
@@ -22,20 +21,24 @@ class App extends Component {
   onSubmit = e => {
     e.preventDefault();
     this.setState({
-      list: [...this.state.list, this.state.input],
+      chips: [...this.state.chips, this.state.input],
       input: ""
     });
   };
 
-  deleteItem = 
+  // creating a delete function that will allow me to delete specific chips
+  deleteItem = index => {
+    this.setState({
+      chips: [this.state.chips.splice(index, 1)]
+    });
+  };
 
   render() {
-    console.log("this is state " + this.state.input);
     return (
       <div className="App">
         <header className="App-header">
           <h1>My To-Do List</h1>
-          <ElementCreator starTrek={this.state.list} />
+          <ElementCreator starTrek={this.state.chips} />
           <form onSubmit={this.onSubmit}>
             <TextField
               value={this.state.input}
