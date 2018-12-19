@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./App.css";
-import Button from "@material-ui/core/Button";
 
 class App extends Component {
   state = {
@@ -21,13 +20,14 @@ class App extends Component {
     });
   }
 
-  giveFact() {}
+  // giveFact() {}
 
   render() {
     return (
       <div>
-        <ul>{this.showFact()}</ul>
-        <Button onClick={giveFact()}>Button</Button>
+        {/* <ul>{this.showFact()}</ul> */}
+        <div class="button">New Fact!</div>
+        {/* add to button later --> onClick={giveFact()} */}
       </div>
     );
   }
