@@ -3,7 +3,8 @@ import "./App.css";
 
 class App extends Component {
   state = {
-    facts: []
+    facts: [],
+    randomFact: []
   };
 
   componentDidMount() {
@@ -14,20 +15,19 @@ class App extends Component {
       });
   }
 
-  showFact() {
-    return this.state.facts.map((item, index) => {
-      return <li key={index}> {item.text} </li>;
-    });
+  giveFact() {
+    let number = Math.floor(Math.random() * 145);
+    let newFact = this.state.facts[number];
+    this.setState({ randomFact: newFact });
   }
-
-  // giveFact() {}
 
   render() {
     return (
-      <div>
-        {/* <ul>{this.showFact()}</ul> */}
-        <div class="button">New Fact!</div>
-        {/* add to button later --> onClick={giveFact()} */}
+      <div class="button-and-fact">
+        <div class="random-fact">{this.state.randomFact.text}</div>
+        <div class="button" onClick={() => this.giveFact()}>
+          Give me a cat fact right meow!
+        </div>
       </div>
     );
   }
